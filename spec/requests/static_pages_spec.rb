@@ -22,4 +22,11 @@ describe "Pagina Acerca de" do
   it {  should have_title('Sample App / Acerca de') }
 end
 
+describe "Pagina de Contacto" do
+  before { visit contacto_path }
+  it {  should have_content('Contacto') }
+  it {  should have_title('Sample App / Contacto') }
+end
+
+
 end
