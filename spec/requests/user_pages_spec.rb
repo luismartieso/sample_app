@@ -21,7 +21,7 @@ describe "UserPages" do
 
   describe "registro" do
   	before { visit registro_path }
-  	let(:submit) { "Crear mi Cuenta "}
+  	let(:submit) { "Crear mi Cuenta"}
 
   	describe "con informacion  invalida" do
   		it "no debe crear el usuario" do
