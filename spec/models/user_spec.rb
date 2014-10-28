@@ -10,6 +10,8 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }
 
   it { should be_valid }
 
@@ -47,7 +49,7 @@ describe User do
 	 		end
 	end 
 
-	describe "cuando el mailya existe" do
+	describe "cuando el mail ya existe" do
 		before do
 			usuario_con_el_mismo_mail = @user.dup
 			usuario_con_el_mismo_mail.email = @user.email.upcase
@@ -89,5 +91,10 @@ describe User do
 			specify { expect(user_for_invalid_password).to be_false }
 		end
 	end 
+
+	describe "remember token" do
+		before { @user.save }
+		its(:remember_token) { should_not be_blank }
+	end
 end
 
