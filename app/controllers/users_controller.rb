@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		#Guarda el usuario
-  		flash[:succes] = "Bienvenido a Sample App!"
+  		ingreso @user
+  		flash[:success] = "Bienvenido a Sample App!"
   		redirect_to @user
   	else
   		render 'new'

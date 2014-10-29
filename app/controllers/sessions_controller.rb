@@ -14,5 +14,7 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
+		salir
+		redirect_to root_url
 	end
 end
